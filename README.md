@@ -48,24 +48,18 @@ econstor/docsutf8/
 
 Ejemplo con BERT
 ```bash
-python attentionrank/main.py \
-  --dataset_name econstor \
-  --model_name_or_path bert-base-uncased \
-  --model_type bert \
-  --lang en \
-  --type_execution exec \
-  --k_value 15
+./run_attentionrank_bert_full.sh
 ```
 Ejemplo con RoBERTa:
 ```bash
-python attentionrank/main.py \
-  --dataset_name econstor \
-  --model_name_or_path roberta-base \
-  --model_type roberta \
-  --lang en \
-  --type_execution exec \
-  --k_value 15
+./run_attentionrank_roberta_full.sh
 ```
+Ejemplo con FinBERT
+
+```bash
+./run_attentionrank_finbert_full.sh
+```
+
 ### 3.3 Exportación de prediciones
 ```bash
 python attentionrank/export_attentionrank_predictions.py \
@@ -99,16 +93,7 @@ mdeRank/data/econstor_test/
 
  Ejemplo con RoBerta:
 ```bash
-  python mdeRank/MDERank/mderank_main.py \
-  --dataset_dir mdeRank/data/econstor_test \
-  --dataset_name econstor_test \
-  --doc_embed_mode mean \
-  --batch_size 16 \
-  --log_dir logs/ \
-  --model_type roberta \
-  --model_name_or_path roberta-base \
-  --lang en \
-  --type_execution eval
+  ./run_mderank_roberta_econstor.sh
 ```
   MDERank evalúa directamente para K = 5, 10 y 15, produciendo métricas comparables con AttentionRank.
 
@@ -128,9 +113,6 @@ data/dev_pairs.jsonl
 data/test_pairs.jsonl
 
 ## 6.2 Entrenamiento (ejemplo FinBERT)
-```bash
-python scripts/train_finetune_finbert.py
-```
-los modelos entrenados se almacenan en:
+ Subir los datos a Google Collab y correr el .ipynb de la carpeta finetuning. 
 
 models/<modelo>_finetuned_candidates/
