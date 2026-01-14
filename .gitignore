@@ -1,17 +1,57 @@
-# Outputs de AttentionRank
-econstor/processed_econstor/
-econstor/res*/
-econstor/docsutf8/
-econstor/predictions_top15.jsonl
-econstor/predictions_*.jsonl
-
-# Archivo gigante base
-econstor_finance_en.jsonl
-
-# Cualquier csv gigante generado
-*.csv
-
-# Cache, entornos y compilados
+# =========================
+# Entornos y sistema
+# =========================
+venv/
+.env
+.env.*
 __pycache__/
 *.pyc
-venv/
+.ipynb_checkpoints/
+.DS_Store
+
+
+# ===== AttentionRank outputs =====
+attentionrank/econstor/
+econstor/
+*/econstor/
+
+attentionrank/**/processed_*
+attentionrank/**/res*
+attentionrank/**/docs*
+attentionrank/**/predictions_*.jsonl
+
+# =========================
+# Outputs de MDERank
+# =========================
+mdeRank/data/*/
+!mdeRank/data/README.md
+mdeRank/logs/
+mdeRank/results/
+
+# =========================
+# Logs y temporales
+# =========================
+logs/
+*.log
+
+# =========================
+# Modelos entrenados (finetuning)
+# =========================
+models/
+checkpoints/
+*.bin
+*.pt
+*.safetensors
+
+# =========================
+# Datos grandes / intermedios
+# =========================
+*.csv
+*.tsv
+
+
+# =========================
+# Cachés de librerías
+# =========================
+.cache/
+wandb/
