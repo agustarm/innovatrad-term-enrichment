@@ -1,0 +1,28 @@
+api:
+  default_method: finetune
+  default_k: 5
+  device: auto
+  max_k: 50
+
+models:
+  bert:
+    hf_name: ""
+    local_path: "/Users/antoniojimenez/Documents/Universidad/TFG/models/bert_finetuned_candidates/checkpoint-3000"
+    type: finetune
+
+  roberta:
+    hf_name: ""
+    local_path: "/Users/antoniojimenez/Documents/Universidad/TFG/models/roberta_finetuned_candidates/checkpoint-27039"
+    type: finetune
+  
+  finbert:
+    hf_name: ProsusAI/finbert
+    local_path: /Users/antoniojimenez/Documents/Universidad/TFG/models/finbert_finetuned_candidates
+    type: finetune
+
+finetune:
+  max_length: 256
+  max_candidates_per_doc: 200
+  ngram_max: 3
+  min_token_len: 3
+  score_threshold: 0.05

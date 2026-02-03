@@ -1,0 +1,30 @@
+api:
+  default_method: finetune
+  default_k: 15
+  device: auto
+  max_k: 50
+
+models:
+  roberta:
+    # si el modelo está en local:
+    hf_name: ""
+    local_path: "/Users/antoniojimenez/Documents/Universidad/TFG/models/roberta_finetuned_candidates"
+    type: finetune
+
+  bert:
+    hf_name: ""
+    local_path: "/Users/antoniojimenez/Documents/Universidad/TFG/models/bert_finetuned_candidates"
+    type: finetune
+
+  # opcional: HF puro (no finetuneado)
+  roberta-base:
+    hf_name: "roberta-base"
+    local_path: null
+    type: hf
+
+finetune:
+  max_length: 256
+  max_candidates_per_doc: 200
+  ngram_max: 3
+  min_token_len: 3
+  score_threshold: 0.5
